@@ -15,7 +15,7 @@ fetch(apiUrl)
             card.classList.add("pokemon-card");
 
             card.innerHTML = `
-                <img src="${pokemon.image}" alt="${pokemon.name}">
+                <img src="${pokemon.ThumbnailImage}" alt="${pokemon.name}">
                 <h2>${pokemon.name}</h2>
                 <p>Type: ${pokemon.type}</p>
             `;
@@ -33,11 +33,16 @@ fetch(apiUrl)
             modalElement.innerHTML = `
                 <div id="modal-content">
                     <h2>${pokemon.name}</h2>
+                    <img src="${pokemon.ThumbnailImage}" alt="${pokemon.name}">
                     <p>Type: ${pokemon.type}</p>
                     <p>Weight: ${pokemon.weight}</p>
-                    <p>Movements:</p>
+                    <p>Abilities:</p>
                     <ul>
-                        ${pokemon.movements.map(move => `<li>${move}</li>`).join("")}
+                        ${pokemon.abilities.map(move => `<li>${move}</li>`).join("")}
+                    </ul>
+                    <p>Weakness:</p>
+                    <ul>
+                        ${pokemon.weakness.map(move => `<li>${move}</li>`).join("")}
                     </ul>
                 </div>
             `;
