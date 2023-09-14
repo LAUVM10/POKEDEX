@@ -1,9 +1,12 @@
 const pokemonListElement = document.getElementById("pokemonList");
 const modalElement = document.getElementById("modal");
 const searchInput = document.getElementById("searchInput");
+const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+const apiUrl = 'pokemons.json'; // Relative path to the JSON file
+
 
 // Fetch the Pokemon data from the JSON file
-fetch("https://storage.googleapis.com/campus-cvs/00000000000-images-lectures/pokemons.json")
+fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
         // Function to create a Pokemon card
